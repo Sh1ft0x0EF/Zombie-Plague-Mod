@@ -1,0 +1,47 @@
+- Version: 4.3 Fix 5a (Jul 04, 2011)
+* Fixed menus causing runtime errors
+* Fixed API to be compatible with some subplugins (e.g. ammo pack bank)
+
+- Version: 4.3 Fix 5 (Jul 03, 2011)
+* Added support for MP3 win sounds
+* Added CVAR to reward zombies ammo packs for damaging humans/survivor (zp_zombie_damage_reward <damage amount>)
+* Added CVAR to enable/disable ZP custom HUD display (zp_hud_display <0/1>)
+* Added zp_zombie_painfree <3> setting (only affect first zombie)
+* Updated method to change player's maxspeed using HamSandwich for better compatibility
+* Fixed new menus not remembering the page you were in last time it was opened
+* Fixed player models with modelT.mdl files not precached automatically
+* Fixed team scores not getting reset after Game Commencing event
+* API: Added native to retrieve description/information of a given zombie class
+* API: Added runtime error support (now you can check logs and see which subplugin is causing the error)
+
+- Version: 4.3 Fix 4 (Jun 24, 2011)
+* Fixed custom model for survivor's weapon not working when changing zp_surv_weapon cvar
+* Fixed zombies/survivor using CS buyzones when money is enabled exploit
+* Fixed zombies not respawning on survivor rounds if zp_surv_allow_respawn enabled and zp_respawn_after_last_human set to 0
+* Fixed settings zp_respawn_after_last_human 0 and zp_deatmatch 4 (balanced respawn) sometimes not working properly
+* Fixed zp_respawn_on_worldspawn_kill not working at all on certain rounds
+
+- Version: 4.3 Fix 3 (Jun 20, 2011)
+* CVAR zp_human_speed can now be set to 0 to make humans use CS default weapon speeds
+* Fixed 3rd party plugins unable to change player's maxspeed
+* Fixed frost grenades not saving player's custom gravity/maxspeed, which would mess up some subplugins like parachute, etc.
+* Implemented better method to change player's maxspeed using HamSandwich (found by joaquimandrade, thanks to PoSiTiOn Of PoWeR for pointing this out)
+* API: Added native to replace ZP player models (zp_override_user_model)
+
+- Version: 4.3 Fix 2 (Jun 19, 2011)
+* Allow humans to use CS buyzones easily if money is enabled and random spawning is on
+* Fixed double flashlight exploit
+* Fixed flares lighting issues
+* Fixed humans unable to use nightvision after buying it with money
+* Fixed menus triggering radio commands when pressing next/back, menus closing automatically when walking out of buyzones
+* Fixed "[CS] Invalid Player" errors when player disconnects after throwing an infection bomb
+* Fixed nightvision not properly removed if zp_nvg_custom is 0 and player turns into human/survivor when his nightvision is turned on
+* Fixed rare runtime error 4: index out of bounds (spec_nvision task)
+
+- Version: 4.3 Fix 1 (Jun 12, 2011)
+* Fixed server crashes during mapchange and some potential crashes due to accessing uninitialized entity's private data
+* Fixed player's armor not properly removed when it gets to 0
+* Fixed p_knife model accidentally removed when cvar zp_admin_knife_models_human is enabled
+* Fixed settings for ignoring nemesis/survivor frags and rewarding frags/ammo packs when deathmatch is enabled
+* Fixed console commands zp_swarm, zp_multi and zp_plague expecting a <target> parameter, even though it's not required to start those modes
+* Fixed spectator nightvision using incorrect colors if you die when zombie madness is enabled
